@@ -1,0 +1,54 @@
+.banner {
+    width: 100vw;
+    height: 30vh;
+}
+
+.logo {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    left: calc(50vw -15vw);
+    top: calc(15vh - 15vw);
+}
+
+.banner {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin: 0;
+}
+
+.banner img {
+    height: auto;
+    width: 45%;
+}
+
+.line {
+    background: #f0f0f0;
+}
+
+.discount-list {}
+
+.discount-item {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+a.get {
+    border: 2px solid red;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    line-height: -3rem;
+    padding: 5px 5px;
+    color: red;
+    border-radius: 5px;
+}
+
+.dicount-info {
+    padding-top: 5px;
+    color: #666;
+}

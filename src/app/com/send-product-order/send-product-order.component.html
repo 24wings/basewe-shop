@@ -1,0 +1,50 @@
+<!-- 待发货 -->
+
+<div class="order_num">
+    <p style="margin-bottom: 0.8rem;">订单编号：{{order._id}}<span class="order-state">待收货</span></p>
+    <div class="order_num_box">
+        <img [src]="order.product.images[0].url">
+        <div class="abs">
+            <p routerLink="/product-detail" [queryParams]="{productId:order.product._id}">{{order.product.name}}</p>
+            <p class="gw">{{order.product.unit}}</p>
+
+            <p class="buynum">数量：{{order.num}}<span style="float: right;">原价：￥{{order.product.price}}</span></p>
+            <div style="clear: both;"></div>
+            <p class="dj" style="    font-weight: 600;">￥{{order.totalPrice}}<span style="float: right; color: #777373; font-weight:500;"> {{order.num}}</span></p>
+        </div>
+    </div>
+    <div class="gmsl allmoney">
+        <p>共{{order.product.order_num}}件商品，实付款：￥{{order.totalPrice}}(免运费)</p>
+
+
+    </div>
+    <div class="order_ok">
+        <div style="float: right;">
+            <span (click)="isShowModal=true">申请退款</span>
+            <span onclick="alert('已提醒卖家发货，请耐心等待')">提醒发货</span>
+        </div>
+    </div>
+</div>
+<div class="bankMoney" *ngIf="isShowModal">
+    <div class="bankMoney-con">
+        <div style="    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ccc;">
+
+            申请退款
+        </div>
+        <div style="padding: 1rem;">
+            <p style="padding: 1rem;
+    padding-left: 0;">退款原因</p>
+            <textarea [(ngModel)]="cancelReason" style="    width: 100%;
+    height: 40vh;"></textarea>
+        </div>
+        <div (click)="isShowModal=false;bankMoney()" style="    width: 2rem;
+    background: #de3535;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 2rem;"> 确定</div>
+    </div>
+</div>

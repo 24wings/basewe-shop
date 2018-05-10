@@ -1,0 +1,116 @@
+<ons-page *ngIf="product">
+    <ons-toolbar>
+        <ons-back-button></ons-back-button>
+        <div class="center">邦为商城</div>
+        <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+    </ons-toolbar>
+
+    <app-transition *ngIf="product">
+        <div class="content">
+            <div class="img-show">
+                <img [src]="product.images[0].url" alt="">
+            </div>
+            <div class="details-price-box">
+                <div class="details-price-box-box">
+                    <p class="details-price">￥{{product.price *product.discount / 100}}
+                        <span *ngIf="product.discount!==100">享受{{product.discount }}折</span>
+                    </p>
+                    <small class="share">分享可获得秒杀机会</small>
+                    <p class="details-price-yuanjia">原价￥{{product.price}}</p>
+                    <i class="iconfont share-icon">&#xe608;</i>
+                    <p class="details-price-title">{{product.name}}
+                        <span>({{product.unit}})</span>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="instructions" *ngFor="let ticket of userActiveTickets"> -->
+            <!-- {{ticket.reduction.title}} -->
+            <!-- <span>{{ticket.reduction.value}}元</span> -->
+            <!-- </div> -->
+            <div class="describe">
+                <div class="describe-box">
+                    <div class="describe-box-title border-bottom-1px">
+                        商品描述
+                    </div>
+                    <div class="describe-box-content">
+                        {{product.summary}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </app-transition>
+    <div class="buy-nav border-top-1px" *ngIf="product">
+        <div class="buy-nav-numberOf">
+            <div class="buy-nav-numberOf-box">
+                <div class="buy-nav-numberOf-box-jia iconfont" (click)="lessBuyNum()">&#xe633;</div>
+                <div class="buy-nav-numberOf-box-namber">{{buyNum}}</div>
+                <div class="buy-nav-numberOf-box-jian iconfont" (click)="addBuyNum()">&#xe6a9;</div>
+            </div>
+        </div>
+        <div class="shoucang" (click)="collect()"></div>
+
+        <div class=" gouwuche " (click)="shopCart();"></div>
+        <!-- (click)="addShopingCart() " -->
+        <div class="immediate " (click)="dialog.show()">
+            <!-- (click)="buy()" -->
+            立即购买
+        </div>
+    </div>
+    <!-- <app-modal #modal [title]="'添加购物车成功'" (onConfirm)="confirm()"></app-modal> -->
+    <!-- <app-modal #addCollectModal [title]="'添加收藏成功'" (onConfirm)="goCollect()"></app-modal> -->
+    <ons-dialog animation="default" cancelable #dialog>
+
+        <div class="dialog dialoga">
+            <div class="dialog-container">
+
+                <!-- <ons-toolbar>
+
+
+                </ons-toolbar> -->
+                <div class="content" style="top:0;
+    padding: 1rem;    width: 92%;    background: #fff;">
+
+                    <div style="display: flex;
+    justify-content: space-around;
+    height: auto;
+    padding: 1rem;">
+                        <div class="img-show" *ngIf="product" style="width: 50vw">
+                            <img [src]="product.images[0].url" alt="">
+                        </div>
+                        <div style="    margin-left: 1rem;">
+                            <span>￥{{product.price *product.discount / 100}}</span><br>
+                            <span>已选择商品类型:{{getProductname()}}</span>
+                        </div>
+                    </div>
+                    <p>套餐类型</p>
+                    <ul>
+                        <li class="checked">{{getProductname()}}</li>
+
+                    </ul>
+
+                    <div style="    display: flex;
+    justify-content: space-between;margin-top: 2rem;">
+                        <span>
+                          购买数量
+                      </span>
+                        <div class="buy-nav-numberOf-box" style="margin:0;">
+                            <div class="buy-nav-numberOf-box-jia iconfont" (click)="lessBuyNum()">&#xe633;</div>
+                            <div class="buy-nav-numberOf-box-namber">{{buyNum}}</div>
+                            <div class="buy-nav-numberOf-box-jian iconfont" (click)="addBuyNum()">&#xe6a9;</div>
+                        </div>
+                    </div>
+                    <ons-button (click)="dialog.hide();buy()">确认下单</ons-button>
+                </div>
+
+
+
+            </div>
+        </div>
+    </ons-dialog>
+</ons-page>

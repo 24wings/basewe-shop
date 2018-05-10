@@ -1,0 +1,104 @@
+<!-- <div class="add_shop3_top">
+        <p>
+            < 返回</p>
+                <p>邦为商城</p>
+                <span class="nav-item-link" target="_blank" p-id="232"><em p-id="233"></em><em p-id="234"></em><em p-id="235"></em></span>
+    </div> -->
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">订单详情</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+<app-transition *ngIf="order">
+    <div class="unpaid">
+        <div>
+            <span>
+        等待卖家发货
+      </span><br>
+            <span style="font-size: 0.8rem;
+    padding-bottom: 1rem;
+    display: block;
+    padding-top: 0.5rem;"></span>
+        </div>
+        <img src="/assets/images/unpaid.png" alt="">
+    </div>
+    <div class="userAddress" *ngIf="reciveAddress">
+        <ul>
+            <li class="clearfix">
+                <div class="clearfix" style="    padding: 0 0.2rem;">
+                    <p style=" font-size: 1.2rem;
+    text-indent: 0.1rem ">{{reciveAddress.name}} </p>
+                    <span style="    font-size: 1rem;    font-weight: 600;">
+{{reciveAddress.phone}}
+    </span> </div>
+                <div style="    font-size: 1rem;
+    padding: 0.1rem 0;"><img class="icon" src="/assets/images/map_min.png" style="width: 10%;
+    margin: 0;
+    margin-left: -2.8%;">{{reciveAddress.region}}{{reciveAddress.city}}{{reciveAddress.area}}
+                    <span style="    margin: 0.3rem 0;
+    font-weight: 600;
+    color: #bfbfbf;">></span>
+                </div>
+
+
+            </li>
+
+            <li class="clearfix">
+                <p>发布时间</p>
+                <span>{{reciveAddress.publishDt|date:"yyyy-MM-dd"}}</span>
+            </li>
+            <li class="clearfix">
+                <p>发布要求</p>
+                <textarea name="我要发布在xxx平台上" id="" cols="30" rows="10" contenteditable="true" style="      margin-left: 0.4rem;
+    width: 74%;
+    border: none;
+    height: 2rem;
+    color: #999;">{{reciveAddress.publishRequire}}</textarea>
+            </li>
+            <li class=" clearfix " style="border:none;">
+                <p>发布内容</p>
+                <textarea name="请简述你要发布的内容 " id=" " cols="30 " rows="10 " contenteditable="true " style="margin-left: 0.4rem;
+    width: 74%;
+    border: none;
+    height: 3rem;
+    color: #999;">{{reciveAddress.publishContent}}</textarea>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="order_num">
+        <p>订单编号：{{orderId}}</p>
+        <div class="order_num_box">
+            <img [src]="order.product.images[0].url">
+            <div class="abs">
+                <p>{{order.product.name}}</p>
+                <p class="gw">{{order.product.unit}}</p>
+                <i>原价：￥{{order.product.price}}</i>
+
+                <p class="dj">￥{{order.totalPrice}}<span>x {{order.truePayMoneyNumber}}</span></p>
+            </div>
+        </div>
+        <div class="gmsl" style="    float: right;
+ ">
+            <p>实付款：￥{{order.totalPrice}}(免运费)</p>
+
+
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div style="    padding: 1rem;
+    color: #8e8b8b;
+    font-size: 0.9rem;
+    background: #fff;
+    margin: 1rem 0;">
+        支付方式：微信 <br>下单时间： {{order.createDt|date:'yyyy-MM-dd'}}
+    </div>
+
+</app-transition>

@@ -1,0 +1,25 @@
+<!-- 订单奖金派发完毕 -->
+<div class="order_num">
+    <p style="margin-bottom: 0.8rem;">订单编号：{{order._id}}<span class="order-state">奖金已派发</span></p>
+    <div class="order_num_box">
+        <img [src]="order.product.images[0].url">
+        <div class="abs">
+            <p routerLink="/product-detail" [queryParams]="{productId:order.product._id}">{{order.product.name}}</p>
+            <p class="gw">{{order.product.unit}}</p>
+
+            <p class="buynum">数量：{{order.num}}<span style="float: right;">原价：￥{{order.product.price}}</span></p>
+            <div style="clear: both;"></div>
+            <p class="dj" style="    font-weight: 600;">￥{{order.totalPrice}}<span style="float: right; color: #777373; font-weight:500;"> {{order.num}}</span></p>
+        </div>
+    </div>
+    <div class="gmsl allmoney">
+        <p>共{{order.product.order_num}}件商品，实付款：￥{{order.totalPrice}}(免运费)</p>
+
+
+    </div>
+    <div class="order_ok">
+        <div style="float: right;">
+            订单已取消
+        </div>
+    </div>
+</div>

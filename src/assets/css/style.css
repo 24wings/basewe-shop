@@ -1,0 +1,655 @@
+.title-box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+}
+
+textarea {
+    -webkit-user-select: auto;
+}
+
+.title {
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+.title>img {
+    position: absolute;
+    width: 26%;
+    left: 50%;
+    margin-left: -13%;
+    top: 14px;
+}
+
+.title>i {
+    font-size: 1.2rem;
+    display: block;
+    position: absolute;
+    right: 5%;
+    line-height: 40px;
+    color: #a0a0a0;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    margin-top: 40px;
+}
+
+.banner>img {
+    display: block;
+    width: 100%;
+}
+
+.nav {
+    width: 100%;
+    background: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+.nav-box {
+    width: 25%;
+    float: left;
+}
+
+.nav-box>img {
+    display: block;
+    width: 26%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.nav-box>span {
+    font-size: 0.625rem;
+    color: #666666;
+    display: block;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.operation {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.operation-box {
+    margin: 0 auto;
+    width: 90%;
+    overflow: hidden;
+}
+
+.operation-box-title {
+    display: block;
+    width: 66%;
+    margin: 0 auto;
+}
+
+.operation-show {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.operation-show>img {
+    display: block;
+    width: 100%;
+}
+
+.operation-box>p {
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 26px;
+}
+
+.operation-box>p>span {
+    font-size: 0.725rem;
+    color: #999999;
+    line-height: 26px;
+}
+
+.operation-box-a {
+    width: 100%;
+    overflow: hidden;
+    line-height: 26px;
+}
+
+.operation-box-a>p {
+    float: left;
+    font-size: 0.725rem;
+    color: #fd1800;
+    font-weight: 600;
+}
+
+.operation-box-a>a {
+    display: block;
+    float: right;
+    font-size: 0.725rem;
+    color: #ff3000;
+    line-height: 26px;
+    overflow: hidden;
+}
+
+.operation-box-a>a>i {
+    line-height: 26px;
+    display: block;
+    float: right;
+}
+
+.store {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.store-box {
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.store-box-left {
+    float: left;
+    width: 48%;
+    height: 30%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.store-box-left>img {
+    width: 100%;
+    display: block;
+}
+
+.store-box-left>p {
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 26px;
+}
+
+.store-box-left>p>span {
+    font-size: 0.725rem;
+    color: #999999;
+    line-height: 26px;
+}
+
+.left {
+    margin-left: 4%;
+}
+
+.p {
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 26px;
+}
+
+.p>span {
+    font-size: 0.725rem;
+    color: #999999;
+    line-height: 26px;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.footer-box {
+    float: left;
+    width: 25%;
+}
+
+.footer-box i {
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    color: #bfbfbf;
+    margin-top: 3px;
+}
+
+.footer-box span {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #333333;
+}
+
+.img-show {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-show img {
+    display: block;
+    width: 100%;
+}
+
+.details-price-box {
+    width: 100%;
+    background: #fff;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.details-price-box-box {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.details-price {
+    color: #fd1800;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.details-price>span {
+    color: #fd1800;
+    font-size: 0.725rem;
+    border: 1px solid #fd1800;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.share {
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 0.725rem;
+    color: #cecece;
+}
+
+.share-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    color: #a0a0a0;
+}
+
+.details-price-yuanjia {
+    color: #b7b7b7;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    text-decoration: line-through
+}
+
+.details-price-title {
+    margin-top: 0.875rem;
+    color: #666666;
+    font-size: 1rem;
+    margin-bottom: 0.725rem;
+}
+
+.details-price-title span {
+    color: #999999;
+    font-size: 0.875rem;
+}
+
+.instructions {
+    width: 100%;
+    background: #fff;
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: #333;
+    line-height: 40px;
+    text-indent: 5%;
+    overflow: hidden;
+}
+
+.instructions span {
+    color: #fd3722;
+}
+
+.describe {
+    width: 100%;
+    background: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.describe-box {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.describe-box-title {
+    line-height: 40px;
+    font-size: 0.875rem;
+    color: #666666;
+}
+
+.describe-box-content {
+    color: #999;
+    font-size: 0.785rem;
+    line-height: 24px;
+}
+
+.buy-nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.buy-nav-numberOf {
+    width: 34%;
+    height: 50px;
+    float: left;
+}
+
+.buy-nav-numberOf-box {
+    width: 106px;
+    height: 26px;
+    margin: 12px auto;
+    background: #eeeeee;
+    border-radius: 5px;
+}
+
+.buy-nav-numberOf-box>div {
+    float: left;
+    width: 33.33%;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    color: #333;
+}
+
+.buy-nav-numberOf-box-jia {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.buy-nav-numberOf-box-jian {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.buy-nav-numberOf-box-namber {
+    font-size: 14px;
+}
+
+.immediate {
+    float: left;
+    width: 34%;
+    height: 50px;
+    background: url("../images/goumaibtn.png")no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.gouwuche,
+.shoucang {
+    width: 16%;
+    height: 50px;
+    float: left;
+}
+
+.gouwuche {
+    background: url("../images/gouwuche.png")no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+}
+
+.shoucang {
+    background: url("../images/shoucang.png")no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+}
+
+.SecondsKill-price {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 5px;
+}
+
+.SecondsKill-price-box {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.SecondsKill-price-box>p {
+    font-size: 1rem;
+    color: #fd1800;
+    line-height: 60px;
+    font-weight: 600;
+    float: left;
+    margin-right: 10px;
+}
+
+.SecondsKill-originaPrice {
+    display: block;
+    text-decoration: line-through;
+    font-size: 0.725rem;
+    color: #b7b7b7;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.daojishi>span {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    display: block;
+    float: left;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 3px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.SecondsKill-tile {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.SecondsKill-tile-box {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.SecondsKill-tile-box>p {
+    color: #666666;
+    font-size: 0.875rem;
+    line-height: 30px;
+}
+
+.SecondsKill-tile-box>span {
+    color: #999999;
+    font-size: 0.725rem;
+    line-height: 40px;
+}
+
+.SecondsKill-tile-icon {
+    line-height: 20px;
+}
+
+.SecondsKill-tile-icon i {
+    font-size: 1.4rem;
+    color: #bfbfbf;
+}
+
+.SecondsKill-tile-icon span {
+    font-size: 0.725rem;
+    color: #bfbfbf;
+}
+
+.SecondsKill-tile-iconc {
+    margin-top: 5px;
+    background: #fad7da;
+    font-size: 0.625rem;
+    color: #999;
+    line-height: 30px;
+}
+
+.SecondsKill-tile-iconc>img {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.SecondsKill-tile-iconc h3 {
+    color: #dc1321;
+    font-size: 0.875rem;
+    float: left;
+    margin-left: 10px;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.immediatea {
+    float: left;
+    width: 50%;
+    height: 50px;
+    background: url("../images/goumaibtn.png")no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.draw {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.lucky-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.luck-bg {
+    position: absolute;
+    z-index: 2;
+    width: 62%;
+    height: 32%;
+    top: 20%;
+    left: 50%;
+    margin-left: -31%;
+}
+
+.luck-btn {
+    position: absolute;
+    z-index: 3;
+    width: 14%;
+    top: 29%;
+    left: 50%;
+    margin-left: -7%;
+}
+
+.tanchu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    overflow: hidden;
+}
+
+.tanchu-box {
+    width: 100%;
+    height: 400px;
+    background: rgba(0, 0, 0, .6);
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+.tanchu-box-box {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.quan {
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+}
+
+.quan-btn {
+    width: 40%;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    background: url('../images/button@2x.png')no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    text-align: center;
+    line-height: 40px;
+    color: #ffd864;
+    font-size: 0.875rem;
+}
+
+.tanchu-box-box p {
+    color: #d97c00;
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 26px;
+}
+
+.chacha {
+    display: block;
+    width: 20px;
+    color: #d97c00;
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    border: 1px solid #d97c00;
+    border-radius: 50%;
+    float: right;
+    margin-top: 20px;
+    margin-right: 5%;
+}
+
+.flex-center {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

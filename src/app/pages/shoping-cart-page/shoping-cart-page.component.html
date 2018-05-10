@@ -1,0 +1,120 @@
+<!-- <app-rem-page> -->
+<!-- <div style="background:#f4f4f5;"> -->
+<!-- <div class="add_shop_top">
+  <p>购物车</p>
+  <a *ngIf="state==ViewState.Count" (click)="state=ViewState.Edit">编辑</a>
+  <a *ngIf="state==ViewState.Edit" (click)="state=ViewState.Count">完成</a>
+
+  <!--  -->
+<!-- </div> -->
+<!-- <ul class="add_shop"> -->
+<!-- <li *ngFor="let order of orders"> -->
+<!-- <input type="radio" [class.checked]="order.checked" (click)="order.checked =!order.checked;allMoney() "> -->
+<!-- <img routerLink="/product-detail" [queryParams]="{productId:order.product._id}" [src]="order.product.images[0].url"> -->
+<!-- <div class="abs"> -->
+<!-- <p routerLink="/product-detail" [queryParams]="{productId:order.product._id}">{{order.product.name}}</p> -->
+<!-- <p class="gw">{{order.product.summary}}</p> -->
+<!-- <i>原价：￥{{order.product.price}}</i> -->
+<!-- <p class="xiang " style="width:1rem;padding:0; ">享{{order.product.discount}}折</p> -->
+<!-- <p class="dj ">￥{{order.product.price * order.product.discount /100}}</p> -->
+<!-- </div> -->
+<!-- <div class="buy-nav-numberOf-box "> -->
+<!-- <div class="buy-nav-numberOf-box-jia iconfont " (click)="lessOrderProductNum(order._id) "></div> -->
+<!-- <div class="buy-nav-numberOf-box-namber ">{{order.num}}</div> -->
+<!-- <div class="buy-nav-numberOf-box-jian iconfont " (click)="addOrderProductNum(order._id) "></div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!-- </ul> -->
+<!-- 编辑 -->
+
+<ons-page style="position: relative;min-height: 100vh;">
+  <ons-toolbar>
+    <!-- <ion-back-button></ion-back-button> -->
+    <div class="left">
+      <ons-toolbar-button (click)="goBack()">
+        <ons-icon icon="ion-chevron-left"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">购物车
+    </div>
+    <div class="right">
+      <ons-toolbar-button *ngIf="state==ViewState.Edit" (click)="state=ViewState.Count">
+        <!-- 完成 <ons-icon icon="ion-navicon, material:md-menu"></ons-icon> -->
+        完成
+      </ons-toolbar-button>
+      <ons-toolbar-button *ngIf="state==ViewState.Count" (click)="state=ViewState.Edit">
+        <!-- <ons-icon icon="ion-edit, material:md-edit"></ons-icon> -->
+        编辑
+      </ons-toolbar-button>
+    </div>
+    <!-- </div> -->
+  </ons-toolbar>
+  <!-- </div> -->
+  <!-- </app-rem-page> -->
+
+
+  <div class="content">
+
+    <ons-list>
+      <ons-list-item tappable *ngFor="let order of orders">
+        <div>
+          <input [class.checked]="order.checked" (click)="order.checked =!order.checked;allMoney() " type="radio">
+        </div>
+        <div class="left" (click)="goProductDetail(order.product._id)">
+
+          <img class="thumbnail" [src]="order.product.images[0].url">
+        </div>
+        <div class="center">
+          <div class="title">
+            {{ order.product.name }}
+          </div>
+          <div class="user">
+            <ons-icon></ons-icon>
+            <span style="font-size: 12px"> {{order.product.summary}}</span>
+          </div>
+          <div class="desc">
+            {{ order.product.price }}
+          </div>
+        </div>
+        <div class="right">
+          <div class="buy-nav-numberOf-box ">
+            <div class="buy-nav-numberOf-box-jia iconfont " (click)="lessOrderProductNum(order._id) "></div>
+            <div class="buy-nav-numberOf-box-namber ">{{order.num}}</div>
+            <div class="buy-nav-numberOf-box-jian iconfont " (click)="addOrderProductNum(order._id) "></div>
+          </div>
+        </div>
+      </ons-list-item>
+    </ons-list>
+
+
+  </div>
+
+
+
+  <!-- <p class="after-list">
+      <!-- <span ng-show="results.length === 0 && !loading">{{ labelSearch }}</span> -->
+  <!-- <span ng-show="loading"> -->
+  <!-- <ons-icon icon="fa-spinner" size="26px" spin></ons-icon> -->
+  <!-- </span> -->
+  <!-- </p> -->
+  <div class="add_shop_foot " *ngIf="state==ViewState.Edit " style="position:absolute;">
+
+    <label for=" ">
+      <input type="radio " (click)="toggleCheckAll() " [class.allChecked]="isAllChecked() " style="margin: 0.5rem;">全选</label>
+    <a (click)="removeChekcedOrders() ">删除</a>
+  </div>
+
+  <!-- 结算 -->
+  <div class="add_shop_foot " *ngIf="state==ViewState.Count " style="position:absolute">
+
+    <label for=" ">
+      <input type="radio " (click)="toggleCheckAll() " [class.allChecked]="isAllChecked() " style="margin: 0.5rem;">全选
+      <p>合计：
+        <span>￥{{checkOrderMoney}} </span>
+      </p>
+    </label>
+    <a (click)="allOrderMoney()">结算</a>
+  </div>
+
+
+</ons-page>

@@ -1,0 +1,17 @@
+<!-- <app-transition *ngIf="_visible_"> -->
+
+<ng-container *ngIf="_visible_">
+    <div class="model">
+        <div class="model_con">
+            <p>{{title?title:"提示" }}</p>
+
+            <div style="    display: flex;
+    justify-content: space-around;"> <span style="padding: 1rem 0;" (click)="hide()">继续浏览</span><span style="padding: 1rem 0;" (click)="confirm()">查看</span></div>
+
+
+            <!-- <button (click)="_visible_=false">确定</button> -->
+
+        </div>
+    </div>
+</ng-container>
+<!-- </app-transition> -->

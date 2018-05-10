@@ -1,0 +1,29 @@
+<app-transition>
+    <div class="nav-list">
+        <div class="nav-item">
+            <span [class.active]="!selectedGroup" class='flex-center' style="font-size:.6rem;" (click)="selectedGroup=null;refershProducts()"> 全部</span>
+        </div>
+        <div class="nav-item" *ngFor="let group of groups">
+            <span class='flex-center' style="font-size:.6rem;" (click)="selectedGroup=group;refershProducts()" [class.active]="group==selectedGroup"> {{group.groupName}}</span>
+        </div>
+
+    </div>
+    <div class="line" style="height:.5rem"></div>
+
+    <!-- 列表 -->
+    <ul class="product-list">
+        <li class="product" style="display:flex" *ngFor="let product of showProducts">
+            <div style="flex:1;padding:10px" (click)="goDetail(product._id)">
+                <img [src]="product.images[0]?.url" alt="" style="width:100%">
+            </div>
+            <div style="flex:1;padding:10px;">
+                <div (click)="goDetail(product._id)">{{product.name}}</div>
+                <div class="product-subcategory"> {{product.summary}}</div>
+                <div class="price">￥{{product.price * product.discount /100}}
+                    <span class="product-remind" *ngIf="product.discount!==100">享{{product.discount}}折</span>
+                </div>
+                <div class="old-price">原价￥{{product.price}}</div>
+            </div>
+        </li>
+    </ul>
+</app-transition>

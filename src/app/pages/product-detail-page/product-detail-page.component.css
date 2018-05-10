@@ -1,0 +1,58 @@
+.content {
+    min-height: 100vh;
+}
+
+.dialog {
+    z-index: 20001;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    top: 25%;
+    transform: none;
+    left: 0;
+}
+
+.dialog-container {
+    -webkit-mask-image: none;
+}
+
+.page,
+.page__background,
+.page__content {
+    background: #fff!important;
+}
+
+.content ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    /* background: #ccc; */
+    border-radius: 10px;
+    padding: 0.3rem;
+    /* align-items: center; */
+    /* width: 3rem; */
+    /* margin-right: 1rem; */
+}
+
+.content ul li {
+    padding: 0.2rem 1rem;
+    /* display: inline-block; */
+    /* float: left; */
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.checked {
+    background: #0076ff!important;
+    color: #fff;
+}
+
+.button {
+    display: inline-block;
+    width: 80%;
+    margin: 0 2rem;
+    margin-top: 12%;
+    border-radius: 25px;
+    padding: 0.1rem;
+    text-align: center;
+}

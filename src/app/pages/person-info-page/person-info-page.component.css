@@ -1,0 +1,19 @@
+.menu .item {
+    margin: 10px 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px #f5f5f5 solid;
+    /* width: 100vw; */
+    display: flex;
+    align-items: center;
+}
+
+.gray {
+    color: #8e8e8e;
+}
+
+.submit-btn {
+    background: linear-gradient(rgba(245, 6, 6, 0.3), #e52c42);
+    color: #fff;
+    /* padding:  */
+}

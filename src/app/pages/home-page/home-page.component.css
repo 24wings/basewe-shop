@@ -1,0 +1,38 @@
+.store-box-left {
+    float: left;
+    width: 46%;
+    height: 30%;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.store-box {
+    width: 95%;
+}
+
+.store-box-left {
+    margin: 0.2rem 0.4rem;
+    padding: 0;
+}
+
+.nav {
+    height: 1.5rem;
+    padding: 0.2rem 1rem;
+    background: #fff;
+    margin-top: 1rem;
+    overflow: hidden;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    color: #ff0000;
+    width: 91.5%;
+}
+
+.nav i {
+    color: #ff0000;
+    margin-right: 0.2rem;
+}
+
+.content {
+    padding-bottom: 5px;
+}

@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~swiper/dist/css/swiper.min.css";
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.parent {
+    display: flex;
+}
+
+.child-left {
+    flex-shrink: 0;
+}
+
+.child-right {
+    width: 100%;
+}
+
+.dialoga {
+    transform: none !important;
+    left: 0 !important;
+}
+
+textarea {
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+
+.my-order {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    background: #fff;
+}
+
+.my-order li {
+    padding-bottom: 0.5rem;
+    outline: none;
+}
+
+.my-order .active {
+    border-bottom: 2px solid red;
+}
+
+.order_num p {
+    font-size: 1rem;
+}
+
+.order_num {
+    padding: 1rem;
+}
+
+.order_num_box img,
+.order_num .abs {
+    width: 50%;
+}
+
+
+/* .order_num_box img {
+    width: 100px;
+    height: 100px;
+} */
+
+.ngx-datepicker-input {
+    border: none !important;
+}
+
+.order_num_box img {
+    width: 150px;
+    height: 120px;
+}

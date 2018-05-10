@@ -1,0 +1,159 @@
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">确认下单</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+
+<div class="add_address" *ngIf="!defaultAddress" (click)="addAddress.show()">
+    <img src="/assets/images/add_address.png" alt=""><i style="font-size: 1.5rem;">></i></div>
+<div class="userAddress" *ngIf="defaultAddress">
+    <ul>
+        <li class="clearfix">
+            <div class="clearfix" style="    padding: 0 0.2rem;">
+                <p style=" font-size: 1.2rem;
+    text-indent: 0.1rem ">{{defaultAddress.name}} </p>
+                <span style="    font-size: 1rem;    font-weight: 600;">
+     {{defaultAddress.phone}}
+    </span> </div>
+            <div style="    font-size: 1rem;
+    padding: 0.1rem 0;" (click)="addAddress.show()"><img class="icon" src="/assets/images/map_min.png" style="width: 10%;
+    margin: 0;
+    margin-left: -2.8%;">{{defaultAddress.region}}{{defaultAddress.city}}{{defaultAddress.area}}{{defaultAddress.detailAddress}}
+                <span style="    margin: 0.3rem 0;
+    font-weight: 600;
+    color: #bfbfbf;">></span>
+            </div>
+
+
+        </li>
+
+        <li class="clearfix">
+            <p>技师数量</p>
+            <span>{{defaultAddress.teachNum}}</span>
+        </li>
+        <li class="clearfix">
+            <p>房间数量</p>
+            <textarea name="我要发布在xxx平台上" id="" cols="30" rows="10" contenteditable="true" style="      margin-left: 0.4rem;
+    width: 74%;
+    border: none;
+    height: 2rem;
+    color: #999;">{{defaultAddress.publishRequire}}</textarea>
+        </li>
+        <li class=" clearfix " style="border:none;">
+            <p>人均消费</p>
+            <textarea name="请简述你要发布的内容 " id=" " cols="30 " rows="10 " contenteditable="true " style="margin-left: 0.4rem;
+    width: 74%;
+    border: none;
+    height: 3rem;
+    color: #999;">{{defaultAddress.publishContent}}</textarea>
+        </li>
+    </ul>
+
+</div>
+<div>
+    <img src="/assets/images/end.png" alt="" srcset="" style="width: 100%;">
+</div>
+<div class=" order_num " *ngIf="order">
+
+    <p style="    font-size: 1rem;">订单编号：{{orderId}}</p>
+    <div class="order_num_box ">
+        <img [src]="order.product.images[0].url">
+        <div class="abs ">
+            <p style="    font-size: 1rem;margin-top:0px;">{{order.product.name}}</p>
+            <p class="gw " style="    font-size: 1rem;">{{order.product.unit}}</p>
+            <i>原价：￥{{order.product.price}}</i>
+
+            <p class="dj " style="    font-size: 1rem;">￥{{order.product.price * order.product.discount /100}}</p>
+        </div>
+    </div>
+    <div class="gmsl ">
+        <p>购买数量</p>
+
+        <div class="buy-nav-numberOf-box ">
+            <div class="buy-nav-numberOf-box-jia iconfont " (click)="lessBuyNum()"></div>
+            <div class="buy-nav-numberOf-box-namber ">{{order.num}}</div>
+            <div class="buy-nav-numberOf-box-jian iconfont " (click)="addBuyNum()"></div>
+
+        </div>
+    </div>
+
+    <!-- <div *ngFor="let ticket of tickets"> -->
+    <!-- (click)="selectTicket(ticket)" -->
+
+    <div class="gmsl" *ngIf="activeTickets.length>0" (click)="show()">
+        <p>优惠券</p>
+        <span style="width: 70%;    margin: 1rem 0;">{{getCheckedActiveProduct()}} </span>
+        <div class="buy-nav-numberOf-box " style="text-align: right;     width: 2%;    margin: 1rem 0;">
+            >
+        </div>
+    </div>
+    <div class="gmsl" *ngIf="activeTickets.length==0&&unActiveTickets.length>0">
+        <p>优惠券</p>
+        <span style="width: 70%;    margin: 1rem 0;">{{unActiveTickets[0].reduction.title}} 优惠券已经使用</span>
+        <div class="buy-nav-numberOf-box " style="text-align: right;     width: 2%;    margin: 1rem 0;">
+            >
+        </div>
+    </div>
+    <div>
+        <p> 总金额：<span style="float: right;">{{order.product.price}}*{{order.num}}</span></p>
+        <p> 优惠金额：<span style="float: right;">-{{getCheckedActiveReductionValue()}}</span></p>
+        <p>折扣金额：<span style="float: right;">-{{order.product.price}}*{{ 100 -order.product.discount}}% </span></p>
+        <br>
+        <p>一口价商品不参加折扣和优惠</p>
+    </div>
+
+    <!-- </div> -->
+    <div class="pay_wx" style="     ">
+        <img src="/assets/images/24af41.png ">
+        <p style="    font-size: 1rem;
+    line-height: 1.5rem;margin: 0">微信支付</p>
+        <img src="/assets/images/success.png " style="float:right; ">
+    </div>
+</div>
+
+
+
+<div class="add_shop_foot add_shop_foot2 ">
+
+    <label for=" ">
+        
+    <p>实付款：<span>￥{{truePayMoney}} </span></p>
+        </label>
+    <a (click)="pay()">立即支付</a>
+</div>
+
+
+
+<div class="allTicket" #allTicket *ngIf="visible">
+    <ul>
+        <p>店铺优惠</p>
+        <li *ngFor="let ticket of activeTickets" (click)="selectTicket(ticket)">
+            <span>{{ticket.reduction.title}}</span> <input type="checkbox" name="" id="" [class.choosed]="ticket.checked">
+        </li>
+
+        <li *ngFor="let ticket of unActiveTickets" style="color:#999">
+            <span>{{ticket.reduction.title}}(优惠券已使用)</span>
+            <!-- <input type="checkbox" name="" id="" [class.choosed]="ticket.checked"> -->
+        </li>
+
+        <li class="closed" style="width:100%;    margin-top: 5rem;" (click)="close()">关闭</li>
+    </ul>
+</div>
+
+<!--选择地址 -->
+<app-add-user-address #addAddress (onSubmit)=" findMyaddredd($event) "></app-add-user-address>
+
+<ons-action-sheet #actionSheet cancelable [attr.animation]="animation">
+    <div class="action-sheet-mask"></div>
+    <div class="action-sheet">
+
+        <!-- <div>
+            <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">Label 0</ons-action-sheet-button>
+
+        </div> -->
+    </div>
+</ons-action-sheet>

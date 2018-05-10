@@ -1,0 +1,40 @@
+<!-- 支付成功页 -->
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">支付成功</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+<app-transition *ngIf="order">
+    <div class="completion_top">
+        <img src="/assets/images/completion.png" alt=""></div>
+    <div class="completion_top1" style="margin-bottom: 1rem;">
+        <p>订单编号：{{orderId}}</p>
+        <p>支付方式 微信</p>
+        <p>支付金额：￥{{order.truePayMoneyNumber}}</p>
+    </div>
+
+    <div class="order_conta">
+        <p><span class="left">收货人：</span><span class="right">{{order.reciveAddress.name}}</span></p>
+        <p>
+            <span class="left">联系电话：</span><span class="right">{{order.reciveAddress.phone}}</span></p>
+        <p>
+            <span class="left">收货地址：</span><span class="right">{{order.reciveAddress.region}}{{order.reciveAddress.city}}{{order.reciveAddress.area}}{{order.reciveAddress.detailAddress}}</span>
+        </p>
+        <p><span class="left">发布时间：</span><span class="right">{{order.reciveAddress.publishDt|date:"yyyy-MM-dd"}}</span>
+        </p>
+        <p><span class="left">发布要求：</span><span class="right">{{order.reciveAddress.publishRequire}}</span>
+        </p>
+        <p>
+            <span class="left">发布内容：</span><span class="right" style="  border-bottom: none;">{{order.reciveAddress.publishContent}}</span>
+        </p>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="back">
+        <a (click)="orderDetail()">订单详情</a>
+        <a (click)="goHome()">返回首页</a>
+    </div>
+</app-transition>

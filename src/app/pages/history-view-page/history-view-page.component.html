@@ -1,0 +1,87 @@
+<!-- <p>
+  history-view-page works!
+</p>
+
+<ul> 
+
+  <li *ngFor="let view of views">
+    {{view.product.name}}
+  </li>
+</ul> -->
+
+<ons-toolbar>
+  <ons-back-button></ons-back-button>
+  <div class="center">浏览纪录</div>
+  <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+<div *ngFor="let group of viewGroups">
+  <p class="date">{{group.dt | date:'MM月dd日'}}</p>
+  <ul class="product-list">
+    <li class="product" style="display:flex" *ngFor="let product of group.products">
+      <div style="flex:0.5;padding:10px" (click)="goProductDetail(product._id)">
+        <img [src]="product.images[0].url" alt="" style="width:100%">
+      </div>
+      <div style="flex:1;padding:10px;    padding-left: 0;">
+        <div> {{product.name}}</div>
+        <div class="product-subcategory"> {{product.summary}}</div>
+        <div class="price">￥{{product.price}}
+          <div class="old-price">原价￥{{product.minScore}}</div>
+          <span class="product-remind">享65折</span>
+        </div>
+
+      </div>
+    </li>
+
+
+  </ul>
+</div>
+<!-- <p class="date">2月18日</p>
+<ul class="product-list">
+    <li class="product" style="display:flex">
+        <div style="flex:0.5;padding:10px">
+            <img src="/assects/images/商品分类/basewe-m2.png" alt="" style="width:100%">
+        </div>
+        <div style="flex:1;padding:10px;    padding-left: 0;">
+            <div>邦为M2系统(技师工位)</div>
+            <div class="product-subcategory"> 本操作系统适用于所有足疗店的运营，管理，营销,能最大程度提高店面业绩量，提高成本</div>
+            <div class="price">￥650.00
+                <div class="old-price">原价￥1000</div>
+                <span class="product-remind">享65折</span>
+            </div>
+
+        </div>
+    </li>
+    <li class="product" style="display:flex">
+        <div style="flex:0.5;padding:10px">
+            <img src="/assects/images/商品分类/basewe-m2.png" alt="" style="width:100%">
+        </div>
+        <div style="flex:1;padding:10px;    padding-left: 0;">
+            <div>邦为M2系统(技师工位)</div>
+            <div class="product-subcategory"> 本操作系统适用于所有足疗店的运营，管理，营销,能最大程度提高店面业绩量，提高成本</div>
+            <div class="price">￥650.00
+                <div class="old-price">原价￥1000</div>
+                <span class="product-remind">享65折</span>
+            </div>
+
+        </div>
+    </li>
+    <li class="product" style="display:flex">
+        <div style="flex:0.5;padding:10px">
+            <img src="/assects/images/商品分类/basewe-m2.png" alt="" style="width:100%">
+        </div>
+        <div style="flex:1;padding:10px;    padding-left: 0;">
+            <div>邦为M2系统(技师工位)</div>
+            <div class="product-subcategory"> 本操作系统适用于所有足疗店的运营，管理，营销,能最大程度提高店面业绩量，提高成本</div>
+            <div class="price">￥650.00
+                <div class="old-price">原价￥1000</div>
+                <span class="product-remind">享65折</span>
+            </div>
+
+        </div>
+    </li>
+
+</ul> -->

@@ -1,0 +1,245 @@
+<div class="cover" *ngIf="visible &&mode=='create'">
+
+    <div class="modall">
+
+        <li class="flex-center">
+            <h5>添加新的收获地址</h5>
+        </li>
+        <li>
+            <div style="border-right:1px solid #eee">
+                <span class='span'>姓名</span>
+                <input [(ngModel)]="newAddress.name" type="text">
+            </div>
+            <div>
+                <span class="span">电话</span>
+                <input type="number" [(ngModel)]="newAddress.phone">
+            </div>
+        </li>
+        <li class="between" (click)="showAddressSelect=true">
+            <span class='span'>选择地区</span>
+            <span class='span'>{{newAddress.region}}-{{newAddress.city}}-{{newAddress.area}}</span>
+            <div class="span width iconfont icon-right"></div>
+        </li>
+        <li class="between">
+            <input style="padding-left:1rem" type="text" placeholder=" 详细地址（入街道，小区，乡村，存）" [(ngModel)]="newAddress.detailAddress">
+            <div class="span iconfont" style="    padding: 0 1rem;">
+                <img src="/assect/images/map_min.png" alt="" srcset="">
+            </div>
+        </li>
+        <li class="padding" style="font-size: 0.5rem;display:inline-block;padding: 0;">
+
+            <textarea name="" id="" style="width: 93%;
+    height: 2rem;
+    border-color: #fff;
+    padding-top: 0.2rem;
+    font-size:12px;
+    font-family: '微软雅黑 ';     padding: 0 0.6rem; ; " placeholder=" 备注：(如您买的是操作系统类商品请填写以上信息，如果您买的是广告类商品请填写一下信息) "></textarea>
+
+
+
+        </li>
+        <li>
+            <span class="span">技师数量</span>
+            <input class='need' [(ngModel)]="newAddress.teachNum" type="number">
+            <!-- <textarea class='need' [(ngModel)]="newAddress.teachNum"></textarea> -->
+            <!-- <ng-datepicker [(ngModel)]="newAddress.publishDt" [options]="options" style="    direction: rtl;border:none;box-shadow: none;" class="form-control"></ng-datepicker> -->
+        </li>
+        <li class="height">
+            <span class="span">房间数量</span>
+            <textarea class='need' [(ngModel)]="newAddress.publishRequire"></textarea>
+        </li>
+        <li class="height">
+            <span class="span">人均消费</span>
+            <textarea class="need" [(ngModel)]="newAddress.publishContent"></textarea>
+        </li>
+        <li class="border-none flex-center" style="margin-bottom: 2rem;">
+            <div class="button" (click)=" submit()">保存</div>
+
+        </li>
+
+    </div>
+
+
+    <div class="select" style="    width: 100vw;
+  position: absolute;
+  z-index: 11111;
+  height:50vh;
+  background: #fff;
+  bottom: 0;top:50%; " *ngIf="showAddressSelect">
+        <div class="setectTitle" style="    display: flex;
+    justify-content: space-around;   border-bottom: 1px solid #f0f0f0;">
+            <div style=" 
+    display: flex;
+    justify-content:space-around;
+    width: 70%;">
+                <span *ngIf="selectedRegion" style="padding: 1rem;
+    border-bottom:2px solid red;">{{selectedRegion.name}}</span>
+                <span *ngIf="selectedCity" style="padding: 1rem;
+    border-bottom: 1px solid red;">{{selectedCity.name}}</span>
+                <span *ngIf="selectedArea" style="padding: 1rem;
+    border-bottom: 2px solid red;">{{selectedArea}}</span>
+            </div>
+            <div style="    padding: 1rem;">
+                <span>取消</span>
+            </div>
+        </div>
+        <div style="overflow-y:scroll;">
+            <ul *ngIf="!selectedRegion" style="    overflow-y: scroll;
+    height:calc(50vh - 54px);
+    padding-bottom: 4000px;">
+                <li *ngFor="let region of cityJson;let i = index" (click)="selectedRegion=region;" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{region.name}}
+                    <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                </li>
+            </ul>
+
+            <ul *ngIf="!selectedCity && selectedRegion ">
+                <li *ngFor="let city of selectedRegion.city;" (click)="selectedCity=city" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{city.name}}
+                    <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                </li>
+            </ul>
+
+            <ul *ngIf="selectedCity">
+                <li *ngFor="let area of selectedCity.area;" (click)="selectedArea=area;complete()" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{area}}
+                    <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="cover" *ngIf="visible &&mode=='edit'">
+
+    <div class="modall">
+
+        <li class="flex-center">
+            <h5>编辑我的收货地址</h5>
+        </li>
+        <li>
+            <div style="border-right:1px solid #eee">
+                <span class='span'>姓名</span>
+                <input [(ngModel)]="editAddress.name" type="text" value="">
+            </div>
+            <div>
+                <span class="span">电话</span>
+                <input type="number" [(ngModel)]="editAddress.phone">
+            </div>
+        </li>
+        <li class="between" (click)="showAddressSelect=true">
+            <span class='span'>选择地区</span>
+            <span class='span'>{{editAddress.region}}-{{editAddress.city}}-{{editAddress.area}}</span>
+            <div class="span width iconfont icon-right"></div>
+        </li>
+        <li class="between">
+            <input style="padding-left:1rem" type="text" placeholder=" 详细地址（入街道，小区，乡村，存）" [(ngModel)]="editAddress.detailAddress">
+            <div class="span iconfont" style="    padding: 0 1rem;">
+                <img src="/assect/images/map_min.png" alt="" srcset="">
+            </div>
+        </li>
+        <li class="padding" style="font-size: 0.5rem;display:inline-block;padding: 0;">
+
+            <textarea name="" id="" style="width: 93%;
+    height: 2rem;
+    border-color: #fff;
+    padding-top: 0.2rem;
+    font-size: 12px;
+    font-family: '微软雅黑 ';     padding: 0 0.6rem; ; " placeholder=" 备注：(如您买的是操作系统类商品请填写以上信息，如果您买的是广告类商品请填写一下信息) "></textarea>
+
+
+
+        </li>
+        <li>
+            <span class="span">技师数量</span>
+            <!-- <input [(ngModel)]="editAddress.publishDt" type="text" placeholder="Datepicker" class="form-control" bsDatepicker> -->
+            <input class='need' [(ngModel)]="editAddress.teachNum" type="number">
+        </li>
+        <li class="height">
+            <span class="span">房间数量</span>
+            <textarea class='need' [(ngModel)]="editAddress.publishRequire"></textarea>
+        </li>
+        <li class="height">
+            <span class="span">人均消费</span>
+            <textarea class="need" [(ngModel)]="editAddress.publishContent"></textarea>
+        </li>
+
+
+
+
+        <li class="border-none flex-center" style="margin-bottom: 2rem;">
+            <div class="button" (click)=" modify()">确认修改</div>
+
+        </li>
+
+    </div>
+
+
+    <ng-container *ngIf="visible &&mode=='edit'">
+        <div class="select" style="    width: 100vw;
+  position: absolute;
+  height: 50vh;
+  z-index: 11111;
+  background: #fff;
+
+  bottom: 0;top:50%; " *ngIf="showAddressSelect">
+            <div class="setectTitle" style="    display: flex;
+    justify-content: space-around;   border-bottom: 1px solid #f0f0f0;">
+                <div style=" 
+    display: flex;
+    justify-content:space-around;
+    width: 70%;">
+                    <span *ngIf="selectedRegion" style="padding: 1rem;
+    border-bottom:2px solid red;">{{selectedRegion.name}}</span>
+                    <span *ngIf="selectedCity" style="padding: 1rem;
+    border-bottom: 1px solid red;">{{selectedCity.name}}</span>
+                    <span *ngIf="selectedArea" style="padding: 1rem;
+    border-bottom: 2px solid red;">{{selectedArea}}</span>
+                </div>
+                <div style="    padding: 1rem;">
+                    <span>取消</span>
+                </div>
+            </div>
+            <div>
+                <ul *ngIf="!selectedRegion" style="overflow-y: scroll;
+    height:calc(50vh - 54px);
+    padding-bottom: 4000px;">
+                    <li *ngFor="let region of cityJson;let i = index" (click)="selectedRegion=region;" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{region.name}}
+                        <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                    </li>
+                </ul>
+
+                <ul *ngIf="!selectedCity && selectedRegion ">
+                    <li *ngFor="let city of selectedRegion.city;" (click)="selectedCity=city" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{city.name}}
+                        <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                    </li>
+                </ul>
+
+                <ul *ngIf="selectedCity">
+                    <li *ngFor="let area of selectedCity.area;" (click)="selectedArea=area;complete()" style="padding: 0.3rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 0.3rem;">{{area}}
+                        <span class="iconfont icon-right" style="    float: right;
+    color: #f0f0f0;"></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </ng-container>
+
+</div>

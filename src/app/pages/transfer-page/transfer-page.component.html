@@ -1,0 +1,45 @@
+<!-- 物流页 -->
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">物流详情</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+<ul class="logistics-page">
+    <li *ngFor="let record of records">
+        <div class="circle"> <img src="/assets/images/20180419090830.png" alt="" srcset=""></div>
+        <div>
+            <p>{{record.label}}</p>
+            <span>{{record.dt | date:'yyyy-MM-dd HH:mm:ss'}}</span></div>
+    </li>
+
+</ul>
+<!-- 
+<div>
+    <div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+
+    </div>
+    <div>
+        <div>
+            <p>您已确认收货，感谢您的支持</p>
+            <span>2017-12-12 12:30:46</span></div>
+        <div>
+            <p>您已确认收货，感谢您的支持</p>
+            <span>2017-12-12 12:30:46</span></div>
+        <div>
+            <p>您已确认收货，感谢您的支持</p>
+            <span>2017-12-12 12:30:46</span></div>
+        <div>
+            <p>您已确认收货，感谢您的支持</p>
+            <span>2017-12-12 12:30:46</span></div>
+
+    </div>
+
+</div> -->

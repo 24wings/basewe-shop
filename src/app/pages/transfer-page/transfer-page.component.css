@@ -1,0 +1,28 @@
+.logistics-page {
+    padding: 1rem;
+    background: #fff;
+}
+
+.logistics-page li {
+    padding: 1rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    font-size: 1rem;
+    height: 5rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+.logistics-page li p,
+.logistics-page li span {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.circle {
+    height: 1rem;
+}

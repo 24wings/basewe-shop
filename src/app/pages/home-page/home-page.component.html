@@ -1,0 +1,283 @@
+<div *ngIf="systemGroup&&bannerGroup&&shopShowGroup&&shopYingxiao">
+    <div class="content">
+        <div class="title-box">
+            <div class="title border-bottom-1px">
+                <img src="/assets/images/logo.png" alt="">
+                <i class="iconfont" (click)="goShopcar()">&#xe602;</i>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="/assets/images/slide.png" alt="">
+        </div>
+
+
+        <!-- <div class="nav">
+            <div class="nav-box">
+                <img src="/assets/images/nav-m.png" alt="">
+                <span>秒杀活动</span>
+            </div>
+            <div class="nav-box">
+                <img src="/assets/images/nav-c.png" alt="">
+                <span>抽奖活动</span>
+            </div>
+            <div class="nav-box">
+                <img src="/assets/images/nav-d.png" alt="">
+                <span>广告定制</span>
+            </div>
+            <div class="nav-box">
+                <img src="/assets/images/nav-z.png" alt="" style="height: 24px;">
+                <span>专题活动</span>
+            </div>
+        </div> -->
+        <!-- 操作系统 -->
+        <div class="store">
+            <div class="store-box">
+
+                <img src="/assets/images/20180425154832.png" alt="" class="operation-box-title ">
+
+                <div class="store-box-left ng-star-inserted" (click)="goProductDetail(systemGroup.children[0],30)">
+
+
+
+                    <img src="/assets/images/20180425154843.png" alt="">
+
+                    <p (click)="goProductDetail(systemGroup.children[0],30)">{{systemGroup.children[0].name}}
+                        <span>(30个)</span>
+                    </p>
+                    <div class="operation-box-a">
+                        <p>￥15000</p>
+                        <a (click)="goProductDetail(systemGroup.children[0],30)"> 立即购买
+            <i class=" iconfont ">&#xe606;</i>
+          </a>
+                    </div>
+                </div>
+                <div class="store-box-left ng-star-inserted" (click)="goProductDetail(systemGroup.children[0],50)">
+
+                    <img src="/assets/images/20180425154843.png" alt="">
+
+                    <p (click)="goProductDetail(systemGroup.children[0],50)">{{systemGroup.children[0].name}}
+                        <span>(50个)</span>
+                    </p>
+                    <div class="operation-box-a">
+                        <p>￥25000</p>
+                        <a (click)="goProductDetail(systemGroup.children[0],50)"> 立即购买
+            <i class=" iconfont ">&#xe606;</i>
+          </a>
+                    </div>
+                </div>
+                <div class="operation-box" style="    width: 95%;">
+                    <a class="operation-show" (click)="goProductDetail(systemGroup.children[0],100)">
+                        <img [src]="systemGroup.children[0].images[0].url" alt="">
+                    </a>
+                    <p (click)="goProductDetail(systemGroup.children[0],100)">{{systemGroup.children[0].name}}
+                        <span>(100个)</span>
+                    </p>
+                    <div class="operation-box-a">
+                        <p>￥50000</p>
+                        <a (click)="goProductDetail(systemGroup.children[0],100)"> 立即购买
+            <i class=" iconfont ">&#xe606;</i>
+          </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="operation" *ngIf="systemGroup">
+            <div class="operation-box">
+                <img src="/assets/images/310570797334585985.png" alt="" class="operation-box-title">
+                <a class="operation-show" (click)="goProductDetail(systemGroup.children[0],10)">
+                    <img [src]="systemGroup.children[0].images[0].url" alt="">
+                </a>
+                <p (click)="goProductDetail(systemGroup.children[0],10)">{{systemGroup.children[0].name}}
+                    <span>{{systemGroup.children[0].summary}}</span>
+                </p>
+                <div class="operation-box-a">
+                    <p>￥{{systemGroup.children[0].price}}</p>
+                    <a (click)="goProductDetail(systemGroup.children[0],10)"> 立即购买
+            <i class=" iconfont ">&#xe606;</i>
+          </a>
+                </div>
+            </div>
+        </div>
+        <!-- 广告投放 -->
+        <div class="store " *ngIf="bannerGroup ">
+            <div class="store-box " style=" ">
+                <img src="/assets/images/547242435500447281.png " alt=" " class="operation-box-title ">
+                <ng-container *ngFor="let product of bannerGroup.children;let i=index ">
+                    <div class="store-box-left " *ngIf="i<2 " (click)="goProductDetail(product)">
+                        <img [src]="product.images[0].url " alt=" ">
+                        <p (click)="goProductDetail(bannerGroup.children[i])">{{product.name}}
+                            <span>({{product.unit}})</span>
+                        </p>
+                        <div class="operation-box-a ">
+                            <p>￥{{product.price}}</p>
+                            <a (click)="goProductDetail(bannerGroup.children[i])">立即购买
+                <i class="iconfont ">&#xe606;</i>
+              </a>
+                        </div>
+                    </div>
+
+                    <div *ngIf="i==2 " style="    width: 95%;
+    margin: 0 auto;">
+                        <a class="operation-show" (click)="goProductDetail(bannerGroup.children[i])">
+                            <img [src]="product.images[0].url " alt=" ">
+                        </a>
+                        <p class="p " (click)="goProductDetail(bannerGroup.children[i])">{{product.name}}
+                            <span>({{product.unit}})</span>
+                        </p>
+                        <div class="operation-box-a ">
+                            <p>￥{{product.price}}</p>
+                            <a (click)="goProductDetail(bannerGroup.children[i])">立即购买
+                <i class="iconfont ">&#xe606;</i>
+              </a>
+                        </div>
+                    </div>
+
+                </ng-container>
+
+                <!-- <a href=" " class="operation-show ">
+        <img src="/assets/images/849840375749575221.png " alt=" ">
+      </a>
+      <p class="p ">邦为M2系统
+        <span>(技师工位)</span>
+      </p>
+      <div class="operation-box-a ">
+        <p>￥1000.00</p>
+        <a href=" ">立即购买
+          <i class="iconfont ">&#xe606;</i>
+        </a>
+      </div> -->
+            </div>
+        </div>
+        <div class="store " *ngIf="shopShowGroup ">
+
+            <div class="store-box ">
+                <img src="/assets/images/5471242435500447281.png " alt=" " class="operation-box-title ">
+                <ng-container *ngFor="let product of shopShowGroup.children;let i=index ">
+                    <div class="store-box-left " *ngIf="i<4 " (click)="goProductDetail(product)">
+                        <a>
+                            <img [src]="product.images[0].url " alt=" " style="width:158px;height:115px;">
+                        </a>
+                        <p (click)="goProductDetail(product)">{{product.name}}
+                            <span>({{product.unit}})</span>
+                        </p>
+                        <div class="operation-box-a ">
+                            <p>￥{{product.price}}</p>
+                            <a (click)="goProductDetail(product)">立即购买
+                <i class="iconfont ">&#xe606;</i>
+              </a>
+                        </div>
+                    </div>
+                    <div *ngIf="i==4 " style="    width: 95%;
+    margin: 0 auto;">
+
+                        <a class="operation-show" (click)="goProductDetail(shopShowGroup.children[i])">
+                            <img [src]="product.images[0].url " alt=" ">
+                        </a>
+                        <p class="p " (click)="goProductDetail(shopShowGroup.children[i])">{{product.name}}
+                            <span>({{product.unit}})</span>
+                        </p>
+                        <div class="operation-box-a ">
+                            <p>￥{{product.price}}</p>
+                            <a (click)="goProductDetail(shopShowGroup.children[i])">立即购买
+                <i class="iconfont ">&#xe606;</i>
+              </a>
+                        </div>
+                    </div>
+
+                </ng-container>
+
+            </div>
+
+        </div>
+        <div class="operation " *ngIf="shopYingxiao ">
+            <div class="operation-box ">
+                <img src="/assets/images/a5.png " alt=" " class="operation-box-title ">
+                <a class="operation-show " (click)="goProductDetail(shopYingxiao.children[0])">
+                    <img [src]="shopYingxiao.children[0].images[0].url " alt=" ">
+                </a>
+                <p (click)="goProductDetail(shopYingxiao.children[0])">{{shopYingxiao.children[0].name}}
+                    <span>({{shopYingxiao.children[0].unit}})</span>
+                </p>
+                <div class="operation-box-a ">
+                    <p>￥{{shopYingxiao.children[0].price}}</p>
+                    <a (click)="goProductDetail(shopYingxiao.children[0])">立即购买
+            <i class="iconfont ">&#xe606;</i>
+          </a>
+                </div>
+            </div>
+        </div>
+        <marquee behavior="" direction="up" scrollamount="1" scrolldelay="1" class="nav">
+            <div class="">
+
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i> 恭喜长沙市芙蓉区大唐足浴店安装邦为M2系统
+                </p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜佛山市兴达足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜深圳市宝安区姊妹足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市健康足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市多喜来足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜广西爱养生足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜浙江杭州曲资足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜海南梦梦足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜青岛休闲一家足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜山西老夫子足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i> 恭喜长沙市芙蓉区大唐足浴店安装邦为M2系统
+                </p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜佛山市兴达足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜深圳市宝安区姊妹足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市健康足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市多喜来足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜广西爱养生足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜浙江杭州曲资足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜海南梦梦足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜青岛休闲一家足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜山西老夫子足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i> 恭喜长沙市芙蓉区大唐足浴店安装邦为M2系统
+                </p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜佛山市兴达足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜深圳市宝安区姊妹足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市健康足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜武汉市多喜来足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜广西爱养生足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜浙江杭州曲资足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜海南梦梦足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜青岛休闲一家足浴店安装邦为M2系统</p>
+                <p>
+                    <i class="ons-icon zmdi zmdi-volume-up"></i>恭喜山西老夫子足浴店安装邦为M2系统</p>
+            </div>
+
+        </marquee>
+    </div>
+
+</div>

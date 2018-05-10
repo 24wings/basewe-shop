@@ -1,0 +1,74 @@
+<app-transition>
+    <div class="box" *ngIf="!isUserLogin">
+        <div class="avatar" style="top:calc(2vh)">
+            <img src="/assets/images/unlogin-avatar.png" alt="">
+            <h4 class="text-center" style="text-align: center;
+      color: #fff;
+      font-weight: 100;">登录</h4>
+            <h6 style=" color: #fff;
+      text-align: center;
+      width: 100vw;
+      position: absolute;
+      left: calc(15vw - 50vw);
+      margin-top: 3rem;
+  ">登录后请先完善个人信息,后开始购物</h6>
+        </div>
+    </div>
+    <div class="box" *ngIf="isUserLogin&&userInfo">
+        <div class="avatar">
+            <img [src]="userInfo.headimgurl" alt="" style="border-radius:50%;">
+        </div>
+        <p style="    position: absolute;
+    left: 0;
+    bottom:2rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;">{{userInfo.Nickname}}</p>
+    </div>
+
+    <div class="nav-list">
+        <div class="nav-item" (click)="goMyOrderPage()">
+            <img src="/assets/images/个人中心/quanbudingdan.png" alt="" class="icon">
+
+        </div>
+        <div class="nav-item" routerLink="/my-order" [queryParams]="{state:ViewState.Unpay}" (click)="goMyOrderPage()">
+            <img src="/assets/images/个人中心/daizhifu.png" alt="" class="icon">
+
+        </div>
+        <div class="nav-item" routerLink="/my-order" [queryParams]="{state:ViewState.SendProduct}" (click)="goMyOrderPage()">
+            <img src="/assets/images/个人中心/daifahuo.png" alt="" class="icon">
+
+        </div>
+        <div class="nav-item" routerLink="/my-order" [queryParams]="{state:ViewState.WaitReciveProduct}" (click)="goMyOrderPage()">
+            <img src="/assets/images/个人中心/daishouhuo.png" alt="" class="icon">
+
+        </div>
+
+    </div>
+    <div class="line" style="height:.5rem"></div>
+    <ul class="menu-list">
+        <li class="menu-item" (click)="editUserInfo()">
+            <img src="/assets/images/个人中心/gerenzilaio.png" alt="" class="icon">
+            <div class="light" style=" line-height: 3rem;"> 个人资料</div>
+        </li>
+        <li class="menu-item" (click)="myTicket()">
+            <img src="/assets/images/个人中心/youhuijuan.png" alt="" class="icon">
+            <div class="light" style=" line-height: 3rem;"> 我的优惠券</div>
+        </li>
+        <li class="menu-item" (click)="goCollects()">
+            <img src="/assets/images/个人中心/wodeshoucang.png" alt="" class="icon">
+            <div class="light" style=" line-height: 3rem;"> 我的收藏</div>
+        </li>
+        <li class="menu-item" (click)="goAddress()">
+            <img src="/assets/images/个人中心/shouhuodizhi (1).png" alt="" class="icon">
+            <div class="light" style=" line-height: 3rem;"> 收货地址</div>
+        </li>
+        <li class="menu-item" (click)="goHistory()">
+            <img src="/assets/images/个人中心/liulanjilu.png" alt="" class="icon">
+            <div class="light" style=" line-height: 3rem;"> 浏览记录</div>
+        </li>
+
+    </ul>
+</app-transition>
+<app-bottom-bar></app-bottom-bar>

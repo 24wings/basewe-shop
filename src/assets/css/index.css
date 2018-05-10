@@ -1,0 +1,547 @@
+/* .completion_top {
+    background: #f4f4f5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+..completion_top img {} */
+
+.ms_top,
+.ms_top img {
+    width: 100%;
+}
+
+.ms_time {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.ms_time .active {
+    color: #ff0000;
+}
+
+.ms_fq {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.4rem;
+}
+
+.ms_fq p {
+    color: #dc1321;
+    font-size: 0.6rem;
+    margin-bottom: 2px;
+}
+
+.ms_fq i {
+    background: #000;
+    color: #fff;
+    font-style: normal;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.fq_ul {
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+.fq_ul li {
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+}
+
+.fq_ul li img {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.fq_ul li div {
+    float: left;
+    width: 47%;
+    margin-left: 0.2rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.27rem;
+}
+
+.fq_ul .introduction {
+    font-size: 0.2rem;
+    color: #adadad;
+}
+
+.fq_ul .progress {
+    color: #dc1321;
+}
+
+.fq_ul .progress span {
+    width: 50%;
+    background: url(../images/progress.png) no-repeat left center;
+    display: inline-block;
+    color: #fff;
+    background-size: 100%;
+    text-align: center;
+}
+
+.fq_ul .msq {
+    font-size: 0.2rem;
+    color: #dc1321;
+    padding: 0.2rem 0;
+}
+
+.fq_ul .msq i {
+    color: #adadad;
+    font-style: normal;
+    text-decoration: line-through;
+    font-size: 0.2rem;
+}
+
+.fq_ul .msq a img {
+    float: right;
+    width: 1rem;
+}
+
+.add_shop {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 0.88rem;
+}
+
+.add_shop li {
+    overflow: hidden;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f4f4f5;
+    background: #fff;
+}
+
+.add_shop li input {
+    width: 0.4rem;
+    float: left;
+    display: block;
+    height: 0.4rem;
+    margin: 1rem 0.1rem;
+    background-size: 100%;
+    border: 1px solid #9e9898;
+    border-radius: 50%;
+}
+
+.add_shop li img {
+    width: 2.3rem;
+    float: left;
+}
+
+.add_shop li .abs {
+    float: left;
+    width: 30%;
+    font-size: 0.3rem;
+    margin: 0 0.4rem;
+}
+
+.add_shop li .abs p {
+    font-size: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.add_shop li .abs .gw {
+    font-size: 0.2rem;
+    color: #666;
+    margin: 0;
+}
+
+.add_shop li .abs i {
+    font-size: 0.15rem;
+    color: #d7d7d7;
+    text-decoration: line-through;
+    font-style: normal;
+}
+
+.add_shop li .abs .xiang {
+    border: 1px solid #dc1321;
+    color: #dc1321;
+    border-radius: 5px;
+    padding: 0.05rem;
+    width: 0.8rem;
+    font-size: 0.16rem;
+    margin: 0;
+}
+
+.add_shop li .abs .dj {
+    font-size: 0.3rem;
+    color: #dc1321;
+    margin: 0;
+}
+
+.add_shop li .buy-nav-numberOf-box {
+    width: 1.36rem;
+    float: left;
+    margin: 0.5rem 0;
+}
+
+.add_shop_top {
+    background: #000;
+    font-size: 0.3rem;
+    color: #fff;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    position: fixed;
+    width: 100%;
+}
+
+.add_shop_top a {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    color: #fff;
+    margin-right: 0.3rem;
+}
+
+.add_shop_foot {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+    font-size: 0.3rem;
+    height: 0.95rem;
+    line-height: 0.95rem;
+}
+
+.add_shop_foot label {
+    width: 68%;
+    border-top: 1px solid #e2e2e3;
+    display: inline-block;
+    padding-left: 0.3rem;
+    text-indent: 0.2rem;
+    position: relative;
+}
+
+.add_shop_foot label input {
+    width: 0.4rem;
+    float: left;
+    display: block;
+    height: 0.4rem;
+    margin: 1rem 0.1rem;
+    background-size: 100%;
+    border: 1px solid #9e9898;
+    border-radius: 50%;
+    margin: 0.2rem 0;
+}
+
+.add_shop_foot p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.add_shop_foot p span {
+    color: #dc1321;
+}
+
+.add_shop_foot a {
+    background: url(../images/delete.png) no-repeat left center;
+    color: #fff;
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    float: right;
+}
+
+.add_shop3_top {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.3rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background: #000;
+    color: #fff;
+}
+
+.add_shop3_top .nav-item-link em {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 5px 0 0;
+}
+
+.add_address {
+    font-size: 0.3rem;
+    color: #dcdcdc;
+    height: 0.9rem;
+    padding: 0 0.3rem;
+    background: #fff;
+    padding-top: 0.3rem;
+}
+
+.add_address img {
+    width: 2.26rem;
+    float: left;
+}
+
+.add_address i {
+    float: right;
+}
+
+.order_num {
+    margin-top: 0.2rem;
+    background: #fff;
+    padding: 1rem;
+}
+
+.order_num p {
+    font-size: 1rem;
+    color: #666666;
+    margin: 0.16rem 0;
+}
+
+.order_num_box {
+    overflow: hidden;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 1.2rem;
+}
+
+.order_num_box img {
+    width: 45%;
+    float: left;
+}
+
+.order_num .abs {
+    width: 50%;
+    margin-left: 0.3rem;
+    float: right;
+}
+
+.order_num .abs i {
+    font-size: 0.18rem;
+    color: #bfbfbf;
+    font-style: normal;
+    text-decoration: line-through;
+}
+
+.order_num .abs .dj {
+    color: #dc1321;
+}
+
+.order_num .buynum {
+    font-size: 0.5rem;
+    margin: 1rem 0;
+}
+
+.allmoney p {
+    width: 100%;
+    text-align: right;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.order_ok {
+    width: 100%;
+    overflow: hidden;
+}
+
+.order_ok span {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+    margin-right: 0.2rem;
+}
+
+.order-state {
+    color: #dc1321;
+    font-size: 0.8rem;
+    float: right;
+    margin: 0.2rem;
+}
+
+.gmsl {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gmsl .buy-nav-numberOf-box {
+    margin: 12px 0;
+    background: none;
+}
+
+.gmsl .buy-nav-numberOf-box .iconfont {
+    background: #eeeeee;
+}
+
+.pay_wx {
+    height: 0.78rem;
+    background: #fff;
+    overflow: hidden;
+    font-size: 0.25rem;
+    text-indent: 0.25rem;
+    padding: 0 0.3rem;
+    line-height: 0.48rem;
+    margin-top: 0.2rem;
+    padding-top: 0.2rem;
+}
+
+.pay_wx p {
+    float: left;
+}
+
+.pay_wx img {
+    width: 0.45rem;
+    float: left;
+}
+
+.add_shop_foot2 label {
+    height: 0.95rem;
+}
+
+.add_shop_foot2 label p {
+    left: 10%;
+}
+
+.add_shop_foot2 a {
+    float: right;
+}
+
+.cover {
+    background: rgba(45, 39, 39, 0.5);
+    z-index: 3333;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.modal {
+    /* display: flex; */
+    background: #fff;
+    width: 90vw;
+    margin: 2rem auto;
+    min-height: 60vh;
+    border-radius: 19px;
+    font-size: 0.3rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cover-title {
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid #bdbbbb;
+    padding: .2rem;
+}
+
+.inline-form {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cac6c6;
+}
+
+.inline-form .field {
+    flex-shrink: 0;
+    line-height: 0.4rem;
+    padding: 5px 10px;
+    color: #969393;
+}
+
+.inline-form input {
+    border: none;
+    padding: 5px;
+    width: 60%;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.item2 {
+    color: #969393;
+    line-height: 0.5rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #cac6c6;
+    padding: 0.2rem;
+    font-size: 0.3rem;
+}
+
+.save {
+    margin: 0.3rem 1.3rem;
+    width: 3.9rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.1rem 0;
+}
+
+.cover2 {
+    background: rgba(45, 39, 39, 0.5);
+    z-index: 3333;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.modal2 {
+    background: #fff;
+    width: 100%;
+    min-height: 60vh;
+    font-size: 0.3rem;
+}
+
+.modal2 .active {
+    border-bottom: 1px solid #f4f4f4;
+    overflow: hidden;
+}
+
+.modal2 .active li {
+    float: left;
+    padding: 0.2rem;
+}
+
+.modal2 .active .qx {
+    float: right;
+    margin-right: 0.2rem;
+    color: #d0d0d0;
+}
+
+.modal2 .active .on {
+    border-bottom: 2px solid #dc1321;
+}
+
+.province {
+    padding: 0 0.3rem;
+}
+
+.tab .province li {
+    line-height: 0.7rem;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.tab .province li span {
+    float: right;
+    color: #d0d0d0;
+}
+
+.tab .province .on {
+    color: #dc1321;
+}

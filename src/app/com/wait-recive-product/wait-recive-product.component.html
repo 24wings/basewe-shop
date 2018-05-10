@@ -1,0 +1,67 @@
+<!-- 待收货 -->
+<div class="order_num">
+    <p style="margin-bottom: 0.8rem;">订单编号：{{order._id}}<span class="order-state">待发货</span></p>
+    <div class="order_num_box">
+        <img [src]="order.product.images[0].url">
+        <div class="abs">
+            <p routerLink="/product-detail" [queryParams]="{productId:order.product._id}">{{order.product.name}}</p>
+            <p class="gw">{{order.product.unit}}</p>
+
+            <p class="buynum">数量：{{order.num}}<span style="float: right;">原价：￥{{order.product.price}}</span></p>
+            <div style="clear: both;"></div>
+            <p class="dj" style="    font-weight: 600;">￥{{order.totalPrice}}<span style="float: right; color: #777373; font-weight:500;"> {{order.num}}</span></p>
+        </div>
+    </div>
+    <div class="gmsl allmoney">
+        <p>共{{order.product.order_num}}件商品，实付款：￥{{order.totalPrice}}(免运费)</p>
+
+
+    </div>
+    <div class="order_ok">
+        <div style="float: right;">
+            <span (click)="dialog.show()">申请退款</span>
+            <!-- <span>延长收货</span> -->
+            <span (click)="chechTransfer()">查看物流</span>
+            <span (click)="waitReciveProduct()">确认收货</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="bankMoney" *ngIf="isShowModal">
+    <div class="bankMoney-con">
+        <div>
+
+            申请退款
+        </div>
+        <div>
+            <p>退款原因</p>
+            <textarea [(ngModel)]="cancelReason"></textarea>
+        </div>
+        <div (click)="isShowModal=false;bankMoney()"> 确定</div>
+    </div>
+</div>
+
+
+<!-- must be located just under an outermost box such as body element -->
+<ons-dialog animation="default" cancelable #dialog>
+    <div class="dialog-mask"></div>
+    <div class="dialog">
+        <div class="dialog-container" style="height: 50vh;">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="center">请填写退款原因</div>
+                </ons-toolbar>
+                <div class="content">
+                    <div style="text-align: center">
+                        <textarea class="textarea" rows="3" placeholder="Textarea" style="    margin-top: 1rem;
+    border: none;
+    height: 30vh;" [(ngModel)]="cancelReason"></textarea>
+                        <br>
+                        <ons-button (click)="dialog.hide();">提交</ons-button>
+                    </div>
+                </div>
+            </ons-page>
+        </div>
+    </div>
+</ons-dialog>

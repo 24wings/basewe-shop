@@ -1,0 +1,194 @@
+.content {
+    overflow: auto;
+}
+
+.address-list {
+    padding: 10px;
+}
+
+.address-list li {
+    padding-bottom: .5rem;
+}
+
+.address-list .user-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address-detail {
+    font-size: .5rem;
+    color: gray;
+    margin-top: .5rem;
+}
+
+.status-line {
+    font-size: .5rem;
+    color: gray;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-between
+}
+
+.icon {
+    max-width: 15px;
+}
+
+
+/* 模态框 */
+
+.cover {
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    /* z-index: 9999; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.modall {
+    background: #fff;
+    border-radius: 20px;
+    height: 70vh;
+    width: 90vw;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modall>li {
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+.modall>li>div {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+}
+
+.modall .span {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 1rem;
+}
+
+.modall input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 99%;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.padding {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+.between {
+    justify-content: space-between !important;
+}
+
+.height {
+    height: 5rem!important;
+    align-items: flex-start!important;
+}
+
+.start {
+    align-self: flex-start;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.width {
+    width: 2rem;
+}
+
+.button {
+    width: 12rem;
+    height: 2rem !important;
+    background: gray;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.need {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    padding-top: 1rem;
+}
+
+
+/* 结束 */
+
+
+/* 地址选择器 */
+
+
+/* 结束 */
+
+.text-center {
+    text-align: center;
+}
+
+.cover-title {
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid gray;
+    padding: .6rem;
+}
+
+.inline-form {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+.inline-form .field {
+    flex-shrink: 0;
+    line-height: 2.5rem;
+    padding: 5px 10px;
+}
+
+.inline-form input {
+    border: none;
+    padding: 5px;
+    width: 60%;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.address-list {
+    padding: 1rem;
+    background: #fff;
+}

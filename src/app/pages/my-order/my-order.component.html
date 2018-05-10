@@ -1,0 +1,87 @@
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">我的订单</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+
+
+<ul class="my-order">
+    <li [class.active]="!state" routerLink="/my-order" [queryParams]="{}">
+        全部
+    </li>
+    <li [class.active]="state==ViewState.Unpay" routerLink="/my-order" [queryParams]="{state:ViewState.Unpay}">待付款</li>
+    <li [class.active]="state==ViewState.SendProduct" routerLink="/my-order" [queryParams]="{state:ViewState.SendProduct}">待发货</li>
+    <li [class.active]="state==ViewState.WaitReciveProduct" routerLink="/my-order" [queryParams]="{state:ViewState.WaitReciveProduct}">待收货</li>
+    <li [class.active]="state==ViewState.RequestRefound" routerLink="/my-order" [queryParams]="{state:ViewState.RequestRefound}">已申请退款</li>
+</ul>
+
+<!-- 全部订单 -->
+<div *ngIf="!state">
+
+    <ng-container>
+        <!-- <div *onsLazyRepeat="let order of orders; let i = index"> -->
+        <div class="" *ngFor="let order of orders">
+            <!-- order: {{order | json}} -->
+            <ng-container [ngSwitch]="order.state">
+                <!-- Unpay = 1,
+                 SendProduct, //代发货 
+                 Finish, // 确认收货 
+                 Commented, // 已经评论
+                  Cancel, // 订单待支付取消 
+                  WaitReciveProduct, // 代收获
+                  SendProductCancel, // 代发货取消
+                   WaitProductCancel, // 待收货取消 
+                   ReciveCancel, // 已收货取消 
+                   Close,// 订单奖金派发完毕 
+                   RequestRefound 商户申请退款 -->
+                <app-unpay-order (onRefersh)="getOrders()" *ngSwitchCase="ViewState.Unpay" [order]="order"></app-unpay-order>
+                <app-send-product-order (onRefersh)="getOrders()" *ngSwitchCase="ViewState.SendProduct" [order]="order"></app-send-product-order>
+                <app-wait-recive-product *ngSwitchCase="ViewState.WaitReciveProduct" [order]="order" (onRefersh)="getOrders()"></app-wait-recive-product>
+                <app-cancel-order *ngSwitchCase="ViewState.Cancel" [order]="order"></app-cancel-order>
+                <!-- <app-cancel-order *ngSwitchDefault [order]="order"></app-cancel-order> -->
+
+                <app-finish-order *ngSwitchCase="ViewState.Finish" [order]="order"></app-finish-order>
+                <app-commented-order *ngSwitchCase="ViewState.Commented" [order]="order"></app-commented-order>
+                <app-cancel-order *ngSwitchCase="ViewState.Cancel" [order]="order"> </app-cancel-order>
+                <app-wait-product-cancel-order *ngSwitchCase="ViewState.WaitProductCancel" [order]="order"> </app-wait-product-cancel-order>
+                <app-send-product-cancer *ngSwitchCase="ViewState.SendProductCancel" [order]="order" (onRefersh)="getOrders()"></app-send-product-cancer>
+
+                <app-recive-cancel *ngSwitchCase="ViewState.ReciveCancel" [order]="order"> </app-recive-cancel>
+                <app-close-orderr *ngSwitchCase="ViewState.Close" [order]="order"></app-close-orderr>
+
+                <app-request-refound-order *ngSwitchCase="ViewState.RequestRefound" [order]="order"></app-request-refound-order>
+            </ng-container>
+
+
+
+
+        </div>
+    </ng-container>
+
+</div>
+<!-- 待付款 -->
+
+<ng-container *ngIf="state==ViewState.Unpay">
+    <app-unpay-order *ngFor="let order of orders" [order]="order" (onRefersh)="getOrders()"> </app-unpay-order>
+</ng-container>
+<!-- 待发货 -->
+<ng-container *ngIf="state==ViewState.SendProduct">
+
+    <app-send-product-order *ngFor="let order of orders" (onRefersh)="getOrders()" [order]="order"></app-send-product-order>
+
+</ng-container>
+
+<!-- 待收货 -->
+<ng-container *ngIf="state==ViewState.WaitReciveProduct">
+    <app-wait-recive-product *ngFor="let order of orders" [order]="order" (onRefersh)="getOrders()"></app-wait-recive-product>
+</ng-container>
+
+
+<ng-container *ngIf="ViewState.RequestRefound">
+    <app-request-refound-order *ngFor="let order of orders" [order]="order" (onRefersh)="getOrders()"></app-request-refound-order>
+
+</ng-container>

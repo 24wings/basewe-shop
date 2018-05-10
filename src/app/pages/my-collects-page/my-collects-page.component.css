@@ -1,0 +1,44 @@
+  .collect1 {
+      border: none;
+      border-bottom: 0.2rem;
+  }
+  
+  .order_num {
+      margin-top: 0.2rem;
+      /* background: #fff; */
+      padding: 0.5rem;
+      padding: 0;
+      margin: 0;
+      background: none;
+  }
+  
+  .order_num p {
+      font-size: 0.3rem;
+  }
+  
+  .order_num_box {
+      overflow: hidden;
+      border-bottom: 1px solid #e4e4e4;
+      padding-bottom: 1.2rem;
+      padding: 0.5rem;
+      margin-bottom: 0.3rem;
+      background: #fff;
+  }
+  
+  .order_num .abs i span {
+      display: inline-block;
+      border-radius: 5px;
+      border: 1px solid #dc1321;
+      padding: 0.01rem 0.1rem;
+      font-size: 0.01rem;
+      margin-left: 0.1rem;
+  }
+  
+  .order_num .abs .dj span {
+      text-align: right;
+      display: inline-block;
+      float: right;
+      color: #adadad;
+      font-size: 0.24rem;
+      margin-top: 0.05rem;
+  }

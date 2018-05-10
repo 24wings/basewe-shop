@@ -1,0 +1,32 @@
+<ons-tabbar (postchange)="tabbar.getActiveTabIndex()==2?tabbar.setTabbarVisibility(false):tabbar.setTabbarVisibility(true)	"
+  #tabbar>
+  <div class="tabbar__content"></div>
+  <div class="tabbar">
+    <ons-tab label="首页" icon="ion-home" [page]="homePage.page" active></ons-tab>
+    <ons-tab label="产品分类" icon="ion-ios-browsers" [page]="categoryPage.page"></ons-tab>
+    <ons-tab label="购物车" icon="shopping-cart" [page]="shopingCart"></ons-tab>
+    <ons-tab label="个人中心" icon="user-circle" [page]="personCenter"></ons-tab>
+
+
+    <!-- <ons-tab label="Page3" icon="ion-ios-search" [page]="tab3"></ons-tab> -->
+  </div>
+</ons-tabbar>
+
+
+
+<!-- <div class="footer-box" routerLink="/" routerLinkActive="active">
+    <i class="iconfont">&#xe62e;</i>
+    <span>首页</span>
+</div>
+<div class="footer-box" routerLink="/product-category" routerLinkActive="acitve">
+    <i class="iconfont">&#xe66b;</i>
+    <span>商品分类</span>
+</div>
+<div class="footer-box" routerLink="/shoping-cart" routerLinkAcitve="active">
+    <i class="iconfont">&#xe602;</i>
+    <span>购物车</span>
+</div>
+<div class="footer-box" routerLink="/person-center" routerLinkActive="active">
+    <i class="iconfont">&#xe659;</i>
+    <span>个人中心</span>
+</div> -->

@@ -1,0 +1,28 @@
+  .model {
+      width: 100%;
+      background: rgba(37, 4, 4, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 666;
+      height: 100vh;
+  }
+  
+  .model_con {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 65%;
+      background: #fff;
+      border-radius: 10px;
+  }
+  
+  .model_con p {
+      font-size: 1rem;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .model_con span {
+      padding: 2rem 0;
+  }

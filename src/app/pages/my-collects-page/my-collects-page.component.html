@@ -1,0 +1,39 @@
+<ons-toolbar>
+  <ons-back-button></ons-back-button>
+  <div class="center">我的收藏</div>
+  <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+
+
+<!-- <div class="add_shop3_top">
+        <p>
+            < 返回</p>
+                <p>我的收藏</p>
+                <span class="nav-item-link" target="_blank" p-id="232"><em p-id="233"></em><em p-id="234"></em><em p-id="235"></em></span>
+    </div> -->
+
+<div class="order_num">
+
+  <div class="order_num_box collect1" *ngFor="let product of products">
+    <figure (click)="goProductDetail(product._id)">
+      <img src="{{product.images[0].url}}">
+    </figure>
+    <div class="abs">
+      <p (click)="goProductDetail(product._id)">{{product.name}}</p>
+
+      <i>原价：￥500.00
+        <span>享65折</span>
+      </i>
+
+      <p class="dj">￥325.00/条
+        <span (click)="removeCollect(product._id)">取消收藏</span>
+      </p>
+    </div>
+  </div>
+
+
+</div>

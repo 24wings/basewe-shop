@@ -1,0 +1,51 @@
+<ons-toolbar>
+    <ons-back-button></ons-back-button>
+    <div class="center">收货地址</div>
+    <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+<ul class="address-list">
+    <li *ngFor="let address of addresses">
+        <div style="   border-bottom: 1px solid lightgray;">
+            <div class="user-info">
+                <span style="color:gray;">{{address.name}}</span>
+
+                <span>{{address.phone}}</span>
+            </div>
+            <div class="address-detail" style="margin-bottom:.5rem;">{{address.region}}-{{address.city}}-{{address.area}}</div>
+        </div>
+
+        <div class="status-line">
+            <div class="status" (click)="setdefaulAddress(address._id)">
+                <img src="/assets/images/defal_checke.png" alt="" class="icon" *ngIf="!address.isDefault">
+                <img src="/assets/images/checked.png" alt="" class="icon" *ngIf="address.isDefault"> 默认地址
+
+            </div>
+            <div class="actions">
+                <span (click)="selectedAddress=address;editAddess.show();">
+                  <img src="/assets/images/edit.png" alt="" class="icon"> 编辑</span>
+                <span (click)="setTop(address._id)">
+                  <img src="/assets/images/set-top.png" alt="" class="icon"> 设为置顶</span>
+                <span (click)="deleteAddress(address._id)"> 
+                  <i class="iconfont icon-chacha"></i> 删除</span>
+            </div>
+        </div>
+    </li>
+</ul>
+<div (click)="addAddress.show()" style="
+text-align: center;
+margin-top: 2rem;
+">
+    <img src="/assets/images/add-btn.png" alt="" style="
+max-width: 60%;
+">
+</div>
+
+
+
+<app-add-user-address #addAddress (onSubmit)="findMyaddredd()"></app-add-user-address>
+
+<app-add-user-address #editAddess (onSubmit)="editAddessOk()" [mode]="'edit'" [editAddress]="selectedAddress"></app-add-user-address>

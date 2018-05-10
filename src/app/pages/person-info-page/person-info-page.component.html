@@ -1,0 +1,51 @@
+<ons-toolbar>
+  <ons-back-button></ons-back-button>
+  <div class="center">个人资料</div>
+  <!-- <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div> -->
+</ons-toolbar>
+
+<app-transition *ngIf="userInfo">
+  <ul class="menu" style="background: #fff;">
+    <li class="item" (click)="modifyHeadimgurl()">
+      <span class="gray"> 头像</span>
+      <img [src]="userInfo.headimgurl" alt="" style="height:40px;border-radius:50%;">
+    </li>
+    <li class="item">
+      <span class="gray" style="flex-shrink:0"> 昵称</span>
+      <input [(ngModel)]="userInfo.Nickname" style="outline:none;border:none;    direction: rtl;width:100%;overflow-x:hidden">
+    </li>
+    <li class="item">
+
+      <span class="gray"> 性别</span>
+      <span>
+        <select [(ngModel)]="userInfo.Sex" style="border:none;">
+          <option value="1" [attr.selected]="userInfo.Sex==1?'selected':false">男</option>
+          <option value="2" [attr.selected]="userInfo.Sex==2?'selected':false">女</option>
+        </select>
+      </span>
+
+    </li>
+    <li class="item" style="justify-content:end">
+      <span class="gray" style="flex-shrink:0"> 出生年月</span>
+      <div class="col-xs-12 col-12 col-md-4">
+
+        <ng-datepicker [(ngModel)]="userInfo.CreateDt" [options]="options" style="    direction: rtl;border:none;box-shadow: none;"
+          class="form-control"></ng-datepicker>
+      </div>
+    </li>
+
+  </ul>
+  <div style="text-align:center">
+    <button class="submit-btn" style="    
+color: #fff;
+padding: 10px 27vw;
+border: none;
+border-radius: 22px;
+margin-top: 15px;" (click)="updateUserInfo()">确认修改</button>
+  </div>
+
+</app-transition>

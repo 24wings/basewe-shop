@@ -1,0 +1,132 @@
+.box {
+    height: 30vh;
+    width: 100vw;
+    background: url(/assets/images/box_bg.png) no-repeat left center;
+}
+
+.box .avatar {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    left: calc(50vw - 7.5vh);
+    top: calc(15vh - 7.5vh);
+    border-radius: 50%;
+    background: #fff;
+}
+
+.box .avatar img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.nav-list {
+    padding: 5px 10px;
+    display: flex;
+}
+
+.nav-list .nav-item {
+    text-align: center;
+    flex: 1;
+}
+
+.nav-item img {
+    max-width: 60%;
+    padding: 5px 10%;
+}
+
+
+/** 虚线可复用*/
+
+.line {
+    background: #f4f4f4
+}
+
+
+/* 菜单 可服用*/
+
+.menu-list .menu-item {
+    display: flex;
+    margin: 5px 10px;
+    border-bottom: 2px solid #f8f8f8;
+}
+
+.menu-list .menu-item {
+    display: flex;
+    margin: 5px 10px;
+}
+
+.menu-item .icon {
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+.light {
+    color: #b0b0b0;
+}
+
+.box {
+    height: 30vh;
+    width: 100vw;
+    background: linear-gradient(rgba(250, 0, 0, .3), rgb(110, 0, 0, .8));
+    position: relative;
+}
+
+.box .avatar {
+    height: 15vh;
+    width: 15vh;
+    position: absolute;
+    left: calc(50vw - 7.5vh);
+    top: calc(15vh - 10vh);
+    border-radius: 50%;
+    background: #fff;
+}
+
+.box .avatar img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.nav-list {
+    padding: 5px 10px;
+    display: flex;
+    background: #fff;
+}
+
+.nav-list .nav-item {
+    text-align: center;
+    flex: 1;
+}
+
+.nav-item img {
+    max-width: 60%;
+    padding: 5px 10%;
+}
+
+
+/** 虚线可复用*/
+
+.line {
+    background: #f4f4f4
+}
+
+
+/* 菜单 可服用*/
+
+.menu-list {
+    background: #fff;
+}
+
+.menu-list .menu-item {
+    display: flex;
+    margin: 5px 10px;
+    border-bottom: 2px solid #f8f8f8;
+}
+
+.menu-list .menu-item {
+    display: flex;
+    margin: 5px 10px;
+}
